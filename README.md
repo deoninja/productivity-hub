@@ -63,8 +63,8 @@ src/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd 7habits
+git clone https://github.com/deoninja/productivity-hub.git
+cd productivity-hub
 ```
 
 2. Install dependencies:

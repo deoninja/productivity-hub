@@ -1,7 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { habitsData } from '../data/habitsData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faStepBackward, faStepForward, faRedo, faVolumeUp, faLightbulb, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faPlay, 
+  faPause, 
+  faStepBackward, 
+  faStepForward, 
+  faRedo, 
+  faVolumeUp, 
+  faLightbulb, 
+  faSpinner,
+  faStar,
+  faUser,
+  faFlag,
+  faListOl,
+  faHandshake,
+  faEarListen,
+  faUsers,
+  faSync,
+  faCheckCircle
+} from '@fortawesome/free-solid-svg-icons';
 
 function SevenHabits() {
   const [currentScene, setCurrentScene] = useState(0);
@@ -192,7 +210,7 @@ function SevenHabits() {
   const currentHabit = habitsData[currentScene];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-x-hidden noise-texture">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden noise-texture">
       {/* Animated Blobs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-400 opacity-30 blur-3xl rounded-full animate-morph z-0 pointer-events-none" style={{ filter: 'blur(80px)', top: '-8rem', left: '-8rem' }}></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-teal-400 via-emerald-400 to-blue-400 opacity-20 blur-3xl rounded-full animate-morph z-0 pointer-events-none" style={{ filter: 'blur(80px)', bottom: '-8rem', right: '-8rem' }}></div>
@@ -201,7 +219,7 @@ function SevenHabits() {
       <div className="glass dark:glass-dark shadow-lg border-b border-white/20 dark:border-white/10 z-10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="text-center">
-            <h1 className="text-responsive-4xl md:text-responsive-5xl font-extrabold text-gradient-blue mb-2 animate-fade-in-scale">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gradient-blue mb-2 animate-fade-in-scale">
               The 7 Habits of Highly Effective People
             </h1>
             <p className="text-responsive-lg text-gray-700 dark:text-gray-300 animate-slide-in-up">
@@ -241,7 +259,7 @@ function SevenHabits() {
                       </span>
                     </div>
                     
-                    <h2 className="text-responsive-2xl md:text-responsive-3xl font-bold text-gradient-blue mb-4 leading-tight animate-slide-in-down">
+                    <h2 className="text-responsive-3xl md:text-responsive-4xl font-bold text-gradient-blue mb-4 leading-tight animate-slide-in-down">
                       {currentHabit.title}
                     </h2>
                     
@@ -390,26 +408,36 @@ function SevenHabits() {
                       : 'bg-gray-50 dark:bg-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 dark:hover:from-blue-900 dark:hover:to-indigo-900 border-2 border-transparent text-gray-900 dark:text-white'
                   }`}
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-base font-bold animate-float animate-pulse-glow ${
-                      index === currentScene
-                        ? 'bg-blue-500 text-white'
-                        : 'bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300'
-                    }`}>
-                      {index + 1}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-bold truncate text-responsive-base">
-                        {habit.title}
-                      </p>
-                      <p className="text-sm truncate text-gray-600 dark:text-gray-400">
-                        {habit.description}
-                      </p>
-                    </div>
-                    <div className="text-3xl animate-float">
-                      {habit.visual}
-                    </div>
-                  </div>
+<div className="flex items-center gap-4">
+<div className={`w-10 h-10 rounded-full flex items-center justify-center text-base font-bold animate-float animate-pulse-glow ${
+  index === currentScene
+    ? 'bg-blue-500 text-white'
+    : 'bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300'
+}`}>
+  <FontAwesomeIcon icon={
+    habit.icon === 'star' ? faStar :
+    habit.icon === 'user' ? faUser :
+    habit.icon === 'flag' ? faFlag :
+    habit.icon === 'list-ol' ? faListOl :
+    habit.icon === 'handshake' ? faHandshake :
+    habit.icon === 'ear-listen' ? faEarListen :
+    habit.icon === 'users' ? faUsers :
+    habit.icon === 'sync' ? faSync :
+    faCheckCircle
+  } />
+</div>
+  <div className="flex-1 min-w-0">
+    <p className="font-bold truncate text-responsive-base">
+      {habit.title}
+    </p>
+    <p className="text-sm truncate text-gray-600 dark:text-gray-400">
+      {habit.description}
+    </p>
+  </div>
+  <div className="text-3xl animate-float">
+    {habit.visual}
+  </div>
+</div>
                 </button>
               ))}
             </div>

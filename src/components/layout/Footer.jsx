@@ -177,7 +177,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
                 <span>&copy; {new Date().getFullYear()} LearnHub. All rights reserved.</span>
                 <FontAwesomeIcon icon={faHeart} className="text-red-500 animate-pulse" />
-                <span>Made with passion for learning</span>
+                <span>Made with passion for learning by: Deo Trinidad</span>
               </div>
 
               {/* Links */}

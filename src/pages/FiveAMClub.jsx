@@ -227,7 +227,7 @@ const FiveAMClub = () => {
   const currentScene = fiveAMClubData[currentSceneIndex];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-x-hidden noise-texture">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden noise-texture">
       {/* Animated Blobs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-400 via-amber-400 to-yellow-400 opacity-30 blur-3xl rounded-full animate-morph z-0 pointer-events-none" style={{ filter: 'blur(80px)', top: '-8rem', left: '-8rem' }}></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-red-400 via-pink-400 to-orange-400 opacity-20 blur-3xl rounded-full animate-morph z-0 pointer-events-none" style={{ filter: 'blur(80px)', bottom: '-8rem', right: '-8rem' }}></div>
@@ -236,7 +236,7 @@ const FiveAMClub = () => {
       <div className="glass dark:glass-dark shadow-lg border-b border-white/20 dark:border-white/10 z-10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="text-center">
-            <h1 className="text-responsive-4xl md:text-responsive-5xl font-extrabold text-gradient-orange mb-2 animate-fade-in-scale">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gradient-orange mb-2 animate-fade-in-scale">
               The 5 AM Club
             </h1>
             <p className="text-responsive-lg text-gray-700 dark:text-gray-300 animate-slide-in-up">

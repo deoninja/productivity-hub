@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden ">
+    <footer className="relative overflow-hidden">
       {/* Animated Background Blobs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 opacity-10 blur-3xl rounded-full animate-morph pointer-events-none" style={{ filter: 'blur(80px)' }}></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-green-400 via-teal-400 to-blue-400 opacity-10 blur-3xl rounded-full animate-morph pointer-events-none" style={{ filter: 'blur(80px)' }}></div>
@@ -70,7 +70,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className={`w-12 h-12 glass dark:glass-dark rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 btn-hover-lift shadow-md animate-fade-in-scale`}
+                    className={`w-12 h-12 glass dark:glass-dark rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg shadow-md animate-fade-in-scale`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                     aria-label={social.label}
                   >
@@ -94,7 +94,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link 
                       to={link.to} 
-                      className="flex items-center space-x-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group animate-slide-in-left"
+                      className="flex items-center space-x-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group animate-slide-in-left hover:translate-x-1"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <div className="w-8 h-8 glass dark:glass-dark rounded-lg flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900 transition-all duration-300">
@@ -143,19 +143,26 @@ const Footer = () => {
               </p>
               
               <div className="space-y-4">
-                <div className="relative">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-3 glass dark:glass-dark border border-white/20 dark:border-white/10 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                  />
-                  <FontAwesomeIcon 
-                    icon={faEnvelope} 
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" 
-                  />
-                </div>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="w-full px-4 py-3 glass dark:glass-dark border border-white/20 dark:border-white/10 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                        required
+                        aria-required="true"
+                        aria-label="Email address for newsletter"
+                      />
+                      <FontAwesomeIcon 
+                        icon={faEnvelope} 
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" 
+                      />
+                    </div>
                 
-                <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold btn-hover-lift shadow-lg animate-pulse-glow transition-all duration-300">
+                <button 
+                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold btn-hover-lift shadow-lg animate-pulse-glow hover:shadow-xl transition-all duration-300"
+                  type="submit"
+                  aria-label="Subscribe to newsletter"
+                >
                   Subscribe Now
                 </button>
               </div>
@@ -183,10 +190,10 @@ const Footer = () => {
                 </a>
                 <button
                   onClick={scrollToTop}
-                  className="w-10 h-10 glass dark:glass-dark rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 btn-hover-lift shadow-md transition-all duration-300"
+                  className="w-12 h-12 glass dark:glass-dark rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 btn-hover-lift shadow-lg transition-all duration-300 transform hover:scale-110"
                   aria-label="Scroll to top"
                 >
-                  <FontAwesomeIcon icon={faArrowUp} />
+                  <FontAwesomeIcon icon={faArrowUp} className="text-lg" />
                 </button>
               </div>
             </div>

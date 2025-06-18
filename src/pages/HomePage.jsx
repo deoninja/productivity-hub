@@ -6,6 +6,24 @@ import { faBook, faArrowRight, faClock, faBrain, faLightbulb } from '@fortawesom
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-x-hidden noise-texture">
+      {/* Animated Background Particles */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        {[...Array(15)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full opacity-5 dark:opacity-10 animate-pulse-slow"
+            style={{
+              background: `radial-gradient(circle, ${i % 3 === 0 ? '#6366f1' : i % 3 === 1 ? '#8b5cf6' : '#ec4899'}, transparent)`,
+              width: `${Math.random() * 200 + 50}px`,
+              height: `${Math.random() * 200 + 50}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          ></div>
+        ))}
+      </div>
+      
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden z-10">
         <div className="px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
@@ -23,7 +41,8 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-scale" style={{ animationDelay: '0.4s' }}>
               <Link 
                 to="/seven-habits" 
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold text-lg btn-hover-lift shadow-lg transition-all duration-300"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold text-lg btn-hover-lift shadow-lg hover:shadow-xl transition-all duration-300"
+                aria-label="Start learning with book summaries"
               >
                 <FontAwesomeIcon icon={faBook} className="text-base" />
                 Start Learning
@@ -48,7 +67,7 @@ const HomePage = () => {
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-items-center">
   {/* 7 Habits Card */}
-  <div className="group glass dark:glass-dark rounded-2xl shadow-xl overflow-hidden border border-white/20 dark:border-white/10 card-hover flex flex-col h-full animate-fade-in-up stagger-1 transition-all duration-300 hover:shadow-2xl">
+  <div className="group glass dark:glass-dark rounded-2xl shadow-xl overflow-hidden border border-white/20 dark:border-white/10 card-hover flex flex-col h-full animate-fade-in-up stagger-1 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
     <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
       <FontAwesomeIcon icon={faLightbulb} className="text-4xl text-white opacity-90 transition-transform duration-300 group-hover:scale-110" />
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
@@ -72,7 +91,8 @@ const HomePage = () => {
       </div>
       <Link 
         to="/seven-habits" 
-        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 mt-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold text-sm btn-hover-lift shadow-lg transition-all duration-300"
+        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 mt-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold text-sm btn-hover-lift shadow-lg hover:shadow-xl transition-all duration-300"
+        aria-label="Explore The 7 Habits of Highly Effective People summary"
       >
         Explore Summary
         <FontAwesomeIcon icon={faArrowRight} className="transition-transform group-hover:translate-x-1" />
@@ -81,7 +101,7 @@ const HomePage = () => {
   </div>
 
   {/* 5 AM Club Card */}
-  <div className="group glass dark:glass-dark rounded-2xl shadow-xl overflow-hidden border border-white/20 dark:border-white/10 card-hover flex flex-col h-full animate-fade-in-up stagger-2 transition-all duration-300 hover:shadow-2xl">
+  <div className="group glass dark:glass-dark rounded-2xl shadow-xl overflow-hidden border border-white/20 dark:border-white/10 card-hover flex flex-col h-full animate-fade-in-up stagger-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
     <div className="relative h-48 bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center">
       <FontAwesomeIcon icon={faClock} className="text-4xl text-white opacity-90 transition-transform duration-300 group-hover:scale-110" />
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
@@ -105,7 +125,8 @@ const HomePage = () => {
       </div>
       <Link 
         to="/five-am-club" 
-        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 mt-6 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white rounded-xl font-semibold text-sm btn-hover-lift shadow-lg transition-all duration-300"
+        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 mt-6 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white rounded-xl font-semibold text-sm btn-hover-lift shadow-lg hover:shadow-xl transition-all duration-300"
+        aria-label="Explore The 5 AM Club summary"
       >
         Explore Summary
         <FontAwesomeIcon icon={faArrowRight} className="transition-transform group-hover:translate-x-1" />
@@ -114,7 +135,7 @@ const HomePage = () => {
   </div>
 
   {/* Learning How to Learn Card */}
-  <div className="group glass dark:glass-dark rounded-2xl shadow-xl overflow-hidden border border-white/20 dark:border-white/10 card-hover flex flex-col h-full animate-fade-in-up stagger-3 transition-all duration-300 hover:shadow-2xl">
+  <div className="group glass dark:glass-dark rounded-2xl shadow-xl overflow-hidden border border-white/20 dark:border-white/10 card-hover flex flex-col h-full animate-fade-in-up stagger-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
     <div className="relative h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
       <FontAwesomeIcon icon={faBrain} className="text-4xl text-white opacity-90 transition-transform duration-300 group-hover:scale-110" />
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
@@ -138,7 +159,8 @@ const HomePage = () => {
       </div>
       <Link 
         to="/learning-how-to-learn" 
-        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 mt-6 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white rounded-xl font-semibold text-sm btn-hover-lift shadow-lg transition-all duration-300"
+        className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 mt-6 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white rounded-xl font-semibold text-sm btn-hover-lift shadow-lg hover:shadow-xl transition-all duration-300"
+        aria-label="Explore Learning How to Learn summary"
       >
         Explore Summary
         <FontAwesomeIcon icon={faArrowRight} className="transition-transform group-hover:translate-x-1" />
@@ -163,7 +185,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
             <div className="text-center p-12 lg:p-16 rounded-3xl glass dark:glass-dark border border-blue-100 dark:border-blue-800 animate-fade-in-scale stagger-1">
-<div className="w-24 h-24 lg:w-28 lg:h-28 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-8 animate-fade-in-up transition-transform duration-300 hover:scale-105">
+<div className="w-24 h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-8 animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg">
   <FontAwesomeIcon icon={faBook} className="text-2xl lg:text-3xl text-white" />
 </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gradient-blue mb-8 lg:mb-10">
@@ -175,7 +197,7 @@ const HomePage = () => {
             </div>
 
             <div className="text-center p-12 lg:p-16 rounded-3xl glass dark:glass-dark border border-purple-100 dark:border-purple-800 animate-fade-in-scale stagger-2">
-<div className="w-24 h-24 lg:w-28 lg:h-28 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-8 animate-fade-in-up transition-transform duration-300 hover:scale-105">
+<div className="w-24 h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-8 animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg">
   <FontAwesomeIcon icon={faLightbulb} className="text-2xl lg:text-3xl text-white" />
 </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gradient-purple mb-8 lg:mb-10">
@@ -187,7 +209,7 @@ const HomePage = () => {
             </div>
 
             <div className="text-center p-12 lg:p-16 rounded-3xl glass dark:glass-dark border border-green-100 dark:border-green-800 animate-fade-in-scale stagger-3">
-<div className="w-24 h-24 lg:w-28 lg:h-28 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-8 animate-fade-in-up transition-transform duration-300 hover:scale-105">
+<div className="w-24 h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-8 animate-fade-in-up transition-transform duration-300 hover:scale-105 hover:shadow-lg">
   <FontAwesomeIcon icon={faBrain} className="text-2xl lg:text-3xl text-white" />
 </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gradient-green mb-8 lg:mb-10">

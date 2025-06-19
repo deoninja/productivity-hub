@@ -13,8 +13,9 @@ import {
   faShare,
   faUsers,
   faCode,
-  faLink
+  faLink,
 } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../assets/LHLOGO.webp'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -39,9 +40,9 @@ const Footer = () => {
                 <div className="relative">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center animate-gradient-xy">
                     <FontAwesomeIcon 
-                    icon={faStar} 
                     className="text-white text-xl animate-pulse" 
                     />
+                    <img src={logo} alt="logo"/>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-lg opacity-30"></div>
                 </div>
@@ -89,7 +90,8 @@ const Footer = () => {
                 {[
                   { to: '/seven-habits', label: '7 Habits Summary', icon: faBook },
                   { to: '/five-am-club', label: '5 AM Club Summary', icon: faClock },
-                  { to: '/learning-how-to-learn', label: 'Learning How to Learn', icon: faBrain }
+                  { to: '/learning-how-to-learn', label: 'Learning How to Learn', icon: faBrain },
+                  { to: '/atomic-habits', label: 'Atomic Habits', icon: faStar }
                 ].map((link, index) => (
                   <li key={index}>
                     <Link 

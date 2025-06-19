@@ -43,6 +43,7 @@ const Navbar = () => {
     { path: '/seven-habits', label: '7 Habits', icon: faBook },
     { path: '/five-am-club', label: '5 AM Club', icon: faClock },
     { path: '/learning-how-to-learn', label: 'Learning', icon: faBrain },
+    { path: '/atomic-habits', label: 'Atomic Habits', icon: faStar },
   ];
 
   const isActive = (path) => location.pathname === path;

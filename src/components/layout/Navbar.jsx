@@ -11,7 +11,8 @@ import {
   faClock, 
   faBrain,
   faHome,
-  faStar
+  faStar,
+  faScroll,
 } from '@fortawesome/free-solid-svg-icons';
 import LHLOGO from '../../assets/LHLOGO.webp'
 
@@ -44,6 +45,7 @@ const Navbar = () => {
     { path: '/five-am-club', label: '5 AM Club', icon: faClock },
     { path: '/learning-how-to-learn', label: 'Learning', icon: faBrain },
     { path: '/atomic-habits', label: 'Atomic Habits', icon: faStar },
+    { path: '/the-daily-stoic', label: 'The Daily Stoic', icon: faScroll },
   ];
 
   const isActive = (path) => location.pathname === path;

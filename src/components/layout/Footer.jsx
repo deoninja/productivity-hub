@@ -14,6 +14,7 @@ import {
   faUsers,
   faCode,
   faLink,
+  faScroll,
 } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/LHLOGO.webp'
 
@@ -91,7 +92,8 @@ const Footer = () => {
                   { to: '/seven-habits', label: '7 Habits Summary', icon: faBook },
                   { to: '/five-am-club', label: '5 AM Club Summary', icon: faClock },
                   { to: '/learning-how-to-learn', label: 'Learning How to Learn', icon: faBrain },
-                  { to: '/atomic-habits', label: 'Atomic Habits', icon: faStar }
+                  { to: '/atomic-habits', label: 'Atomic Habits', icon: faStar },
+                  { to: '/the-daily-stoic', label: 'The Daily Stoic', icon: faScroll },
                 ].map((link, index) => (
                   <li key={index}>
                     <Link 

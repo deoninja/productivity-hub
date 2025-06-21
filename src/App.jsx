@@ -12,6 +12,7 @@ import SevenHabits from './pages/SevenHabits';
 import FiveAMClub from './pages/FiveAMClub';
 import LearningHowToLearn from './pages/LearningHowToLearn';
 import AtomicHabits from './pages/AtomicHabits';
+import TheDailyStoic from './pages/TheDailyStoic';
 
 // Styles
 import './index.css';
@@ -29,6 +30,7 @@ function App() {
               <Route path="/five-am-club" element={<FiveAMClub />} />
               <Route path="/learning-how-to-learn" element={<LearningHowToLearn />} />
               <Route path="/atomic-habits" element={<AtomicHabits />} />
+              <Route path="/the-daily-stoic" element={<TheDailyStoic />} />
             </Routes>
           </main>
           <Footer />

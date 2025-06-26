@@ -8,6 +8,11 @@ import {
   faBrain,
   faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faFacebook,
+} from '@fortawesome/free-brands-svg-icons';
 
 const HomePage = () => {
   return (
@@ -63,6 +68,37 @@ const HomePage = () => {
                 Start Learning
                 <FontAwesomeIcon icon={faArrowRight} className='text-base' />
               </Link>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="flex justify-center items-center gap-6 mt-8 animate-fade-in-scale" style={{ animationDelay: '0.6s' }}>
+              <a 
+                href="https://github.com/deoninja" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                aria-label="GitHub Profile"
+              >
+                <FontAwesomeIcon icon={faGithub} className="text-3xl" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/deonin/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 transition-colors duration-300"
+                aria-label="LinkedIn Profile"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="text-3xl" />
+              </a>
+              <a 
+                href="https://www.facebook.com/deo.trinidad/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-800 dark:hover:text-blue-600 transition-colors duration-300"
+                aria-label="Facebook Profile"
+              >
+                <FontAwesomeIcon icon={faFacebook} className="text-3xl" />
+              </a>
             </div>
           </div>
         </div>
@@ -212,13 +248,13 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className='glass dark:glass-dark py-16 md:py-24 lg:py-32 z-10 relative'>
+      <section className='glass dark:scene-glass-dark py-16 md:py-24 lg:py-32 z-10 relative'>
         <div className='px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto'>
           <div className='text-center space-y-6 mb-16'>
             <h2 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gradient-purple animate-slide-in-down'>
               Why Choose Interactive Learning?
             </h2>
-            <p className='text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 max-w-5xl mx-auto leading-relaxed animate-fade-in-scale'>
+            <p className='text-xl sm:text-2xl md:text-3xl text-gray-800 dark:text-gray-200 max-w-5xl mx-auto leading-relaxed animate-fade-in-scale'>
               Our interactive approach helps you understand, remember, and apply
               key concepts more effectively.
             </p>
@@ -235,7 +271,7 @@ const HomePage = () => {
               <h3 className='text-2xl lg:text-3xl font-bold text-gradient-blue mb-8 lg:mb-10'>
                 Interactive Content
               </h3>
-              <p className='text-lg text-gray-700 dark:text-gray-300 leading-relaxed'>
+              <p className='text-lg text-gray-800 dark:text-gray-600 leading-relaxed'>
                 Navigate through chapters, control audio playback, and engage
                 with content at your own pace.
               </p>
@@ -251,7 +287,7 @@ const HomePage = () => {
               <h3 className='text-2xl lg:text-3xl font-bold text-gradient-purple mb-8 lg:mb-10'>
                 Actionable Tips
               </h3>
-              <p className='text-lg text-gray-700 dark:text-gray-300 leading-relaxed'>
+              <p className='text-lg text-gray-800 dark:text-gray-600 leading-relaxed'>
                 Get personalized, practical tips that you can immediately apply
                 to your daily life and work.
               </p>
@@ -267,7 +303,7 @@ const HomePage = () => {
               <h3 className='text-2xl lg:text-3xl font-bold text-gradient-green mb-8 lg:mb-10'>
                 Enhanced Learning
               </h3>
-              <p className='text-lg text-gray-700 dark:text-gray-300 leading-relaxed'>
+              <p className='text-lg text-gray-800 dark:text-gray-600 leading-relaxed'>
                 Audio narration and visual elements help reinforce key concepts
                 for better retention.
               </p>

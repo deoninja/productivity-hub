@@ -61,7 +61,7 @@ const Navbar = () => {
               <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <img src={LHLOGO} alt="logo" />
               </div>
-              <h1 className="hidden sm:block text-xl font-bold text-gradient-purple">
+              <h1 className="text-xl font-bold text-gradient-purple sm:block">
                 LearnHub
               </h1>
             </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
                   to={item.path}
                   className={`px-4 py-2 rounded-md text-sm font-medium ${
                     isActive(item.path)
-                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+                      ? 'bg-blue-100 dark:bg-blue-900/30 text-purple-500 '
                       : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                   }`}
                 >
@@ -116,7 +116,7 @@ const Navbar = () => {
           <div className="fixed inset-0 z-40 lg:hidden">
             {/* Backdrop */}
             <div 
-              className="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
+              className="absolute inset-0 bg-opacity-50 transition-opacity duration-300"
               onClick={toggleMenu}
               aria-hidden="true"
             ></div>
@@ -132,14 +132,14 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faTimes} className="text-xl" />
                 </button>
               </div>
-              <div className="px-4 py-2 overflow-y-auto max-h-[calc(100vh-5rem)]">
+              <div className="px-4 py-4 overflow-y-auto max-h-[calc(100vh-5rem)] bg-white dark:bg-gray-900">
               <div className="grid gap-1 py-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                    className={`flex items-center space-x-3 px-4 py-4 rounded-lg transition-all duration-200 ${
                       isActive(item.path)
                         ? 'bg-blue-100 dark:bg-blue-800/50 text-blue-700 dark:text-blue-300 shadow-inner'
                         : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:translate-x-1'
@@ -158,7 +158,7 @@ const Navbar = () => {
                 ))}
               </div>
               
-              <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg transition-all duration-300 hover:scale-[1.02]">
+              <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg transition-all duration-300">
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                   Start Learning Today
                 </h3>
